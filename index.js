@@ -13,6 +13,10 @@ connectDB(); // Connect to MongoDB
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Personal Finance API is running!");
+});
+
 // Routes
 app.use("/api/v1/transactions", transactionRoutes);
 app.use("/api/v1/categories", categoryRoutes);
